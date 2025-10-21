@@ -3,8 +3,8 @@
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  "margin": 2,
-  "height": 26,
+  "margin": 1,
+  "height": 24,
   "modules-left": ["custom/omarchy", "hyprland/workspaces"],
   "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
   "modules-right": [
@@ -13,6 +13,8 @@
     "network",
     "pulseaudio",
     "cpu",
+    "memory",
+    "custom/gpu",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -58,6 +60,21 @@
     "format": "󰍛",
     "on-click": "$TERMINAL -e btop"
   },
+  "custom/ram": {
+      "format": " R",
+      "interval": 5,
+      "exec": "free -h | awk '/^Mem:/ {print $3\"/\"$2}'",
+      "tooltip-format": "echo $(free -h | awk '/^Mem:/ {print $3\"/\"$2}')"
+  },
+
+  "custom/gpu": {
+    "format": "{} {icon}",
+    "exec": "gpu-usage-waybar",
+    "return-type": "json",
+    "format-icons": "󰾲",
+    "on-click": "$TERMINAL -e nvtop",
+  },
+
   "clock": {
     "format": "{:L%A %I:%M %p}  ",
     "format-alt": "(W{:L%V) %d %B %Y} ",

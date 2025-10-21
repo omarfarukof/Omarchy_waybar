@@ -1,7 +1,8 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
+  /* background-color: @background; */
+  background-color: transparent;
   color: @foreground;
 
   border: none;
@@ -12,11 +13,40 @@
 }
 
 .modules-left {
+  
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 8;
+  min-height: 0;
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 12px;
+
   margin-left: 8px;
 }
 
 .modules-right {
+  
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 8;
+  min-height: 0;
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 12px;
+
   margin-right: 8px;
+
+}
+
+.modules-center {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 8;
+  min-height: 0;
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 12px;
 }
 
 #workspaces button {
@@ -32,6 +62,8 @@
 
 #tray,
 #cpu,
+#memory,
+#custom-gpu,
 #battery,
 #network,
 #bluetooth,
@@ -48,7 +80,16 @@
 }
 
 tooltip {
-  padding: 2px;
+
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 10;
+  min-height: 0;
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 12px;
+
+  padding: 1px;
 }
 
 #custom-update {
